@@ -8,8 +8,10 @@ export const BACKEND_URL = `https://${REACT_APP_BE_HOST}${REACT_APP_BE_PORT}`
 
 
 export const setCurrentChannel = (channel: IChannel) => {
-    localStorage.setItem('channel', JSON.stringify(channel))
-    document.dispatchEvent(new Event("storage"));
+    if (getCurrentChannel()?.id !== channel.id) {
+        localStorage.setItem('channel', JSON.stringify(channel))
+        document.dispatchEvent(new Event("storage"));
+    }
 }
 
 export const getCurrentChannel = ():IChannel | null => {

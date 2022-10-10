@@ -14,7 +14,7 @@ export interface IMessage extends IInitMessage {
   username?: string;
   user_id: IUser;
   id: number;
-  createdAt?: string,
+  createdAt: string,
   updatedAt?: string,
 }
 
@@ -68,3 +68,7 @@ export interface IUser extends IInitalUser {
 export interface IUserLogin {
   uuid: string
 }
+
+// OTHER
+
+export type MessageTypes = 'first' | 'last' | 'middle' | 'one'

@@ -22,7 +22,10 @@ const ChannelList: React.FC<Props> = () => {
     const setMouseOverFalse = () => setMouseOver(false);
 
     const selectChannel = React.useCallback((channelID: number) => {
-        setActiveChannel(channelID);
+        setActiveChannel((prevState) => {
+            if (prevState !== channelID) return channelID
+            return prevState
+        });
       }, [setActiveChannel]);
 
     React.useEffect(() => {
