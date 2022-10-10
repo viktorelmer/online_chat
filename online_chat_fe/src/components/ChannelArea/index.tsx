@@ -86,6 +86,16 @@ const ChannelArea: React.FC<Props> = ({ userData }) => {
         }
     }, [userData, channel, send])
 
+    function getSortedMessages(): IMessage[] {
+        if (messages) {
+            return messages.sort((pV, cV) => {
+                if (pV.id < cV.id) return -1
+                return 1
+            })
+        }
+        return []
+    }
+
     if (!channel) {
         return <div className="w-full h-screen flex justify-center items-center">
             <Empty description={false}/>
@@ -99,7 +109,7 @@ const ChannelArea: React.FC<Props> = ({ userData }) => {
                 {channel?.name}
                 </header>
                 <div className="messages flex flex-col overflow-auto w-1/2 flex-grow px-5" ref={messageContainerRef}>
-                    {messages?.map((message) => {
+                    {getSortedMessages().map((message) => {
                         const date = new Date(message.createdAt).toLocaleDateString('en-GB', {
                             hour: "2-digit",
                             minute: "2-digit"
