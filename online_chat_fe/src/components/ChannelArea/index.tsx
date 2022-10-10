@@ -86,7 +86,7 @@ const ChannelArea: React.FC<Props> = ({ userData }) => {
         }
     }, [userData, channel, send])
 
-    function getSortedMessages(): IMessage[] {
+    const getSortedMessages = useCallback((): IMessage[] => {
         if (messages) {
             return messages.sort((pV, cV) => {
                 if (pV.id < cV.id) return -1
@@ -94,7 +94,7 @@ const ChannelArea: React.FC<Props> = ({ userData }) => {
             })
         }
         return []
-    }
+    }, [messages])
 
     if (!channel) {
         return <div className="w-full h-screen flex justify-center items-center">
