@@ -3,7 +3,7 @@ import { REACT_APP_BE_HOST, REACT_APP_BE_PORT } from "../config";
 import { IChannel } from "./types.common";
 import Pusher from "pusher-js";
 
-export const BACKEND_URL = `http://${REACT_APP_BE_HOST}:${REACT_APP_BE_PORT}`
+export const BACKEND_URL = `http://${REACT_APP_BE_HOST}${REACT_APP_BE_PORT}`
 
 
 
