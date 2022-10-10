@@ -1,0 +1,61 @@
+.channel-list {
+	position: relative;
+
+	.NewChatButton {
+		cursor: pointer;
+		background-color: rgb(51,144,236);
+		position: absolute;
+		right: 1rem;
+		bottom: 1rem;
+    width: 3.5rem;
+		height: 3.5rem;
+    border-radius: 50%;
+
+		transform: translateY(5rem);
+
+		transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+		&.revealed {
+			transform: translateY(0);
+
+			@media (max-width: 600px) {
+				// Force rendering in the composite layer to fix the z-index rendering issue
+				transform: translate3d(0, 0, 0.625rem);
+				transform-style: preserve-3d;
+			}
+  	}
+
+		
+	}
+
+	.NewChatButton:hover {
+		transition: 0.3s ease-in-out;
+		background-color: rgb(91, 165, 240);
+	}
+}
+
+.channel-item:hover {
+	background: rgb(244, 244, 245);
+}
+
+.channel-item {
+	transition: all 0.3s ease-in-out;
+
+	
+
+	.logo {
+		flex: none;
+    align-items: center;
+    justify-content: center;
+    width: 3.375rem;
+    height: 3.375rem;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    user-select: none;
+    position: relative;
+	}
+}

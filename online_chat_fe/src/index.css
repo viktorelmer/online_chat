@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  height: 100%;
+  background-color: #99BA92;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+#root::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('https://web.telegram.org/z/chat-bg-br.f34cc96fbfb048812820.png');
+}
+
+#root::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: url('https://web.telegram.org/z/chat-bg-pattern-light.ee148af944f6580293ae.png');
+  background-position: top right;
+  background-size: 510px auto;
+  background-repeat: repeat;
+  mix-blend-mode: overlay;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
