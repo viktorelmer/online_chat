@@ -32,8 +32,8 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "cross-env REACT_APP_NODE_ENV=production react-scripts start",
-    "build": "cross-env REACT_APP_NODE_ENV=development react-scripts build",
+    "start": "cross-env REACT_APP_NODE_ENV=development react-scripts start",
+    "build": "cross-env REACT_APP_NODE_ENV=production react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
