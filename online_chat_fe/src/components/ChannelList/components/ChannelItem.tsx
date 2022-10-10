@@ -1,5 +1,5 @@
 import { Channel } from "pusher-js";
-import React, { useEffect } from "react";
+import React from "react";
 import { IChannel, IMessage, IUser } from "../../../exports/types.common";
 import { pusher, setCurrentChannel } from "../../../exports/util";
 
@@ -11,7 +11,6 @@ interface Props {
 }
 
 const ChannelItem: React.FC<Props> = ({channel, selectChannel, isSelected}) => {
-    const [latestMessage, setLatestMessage] = React.useState<IMessage>()
     const [unreadedMessages, setUndreadedMessages] = React.useState<number>(0)
 
     const logoRef = React.createRef<HTMLDivElement>(),
@@ -25,7 +24,6 @@ const ChannelItem: React.FC<Props> = ({channel, selectChannel, isSelected}) => {
 
 
     const subscribeCB = React.useCallback((data: {message: IMessage, user: IUser}) => {
-        setLatestMessage(data.message)
         setUndreadedMessages((prevValue) => prevValue + 1)
     }, [])
 
